@@ -1,0 +1,28 @@
+{
+    "lang": "en-us",
+    "name": "HelpAR Soom",
+    "short_name": "HelpAR",
+    "description": "HelpAR Soom",
+    "start_url": "https://helpar.app/soom-pwa/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "purpose": "any maskable",
+
+    "icons": [
+        {
+            "src": "./images/logo1.png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "./images/logo1.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./images/logo1.png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        }
+    ]
+}

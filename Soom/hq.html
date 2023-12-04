@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HelpAR HQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="HelpAR Soom">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/us.css" />
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+
+<body>
+    <script src="./sw.js"></script>
+    <script src="./js/index.js"></script>
+    <div class="container">
+        <img class="logo" onClick="window.location.href = 'hq.html'" src="./images/logo1.webp" width="60" height="60"
+            alt="" srcset="" />
+        <img class="bm-arrow d-none" onclick="popin()" src="./images/up.webp" alt="" />
+        <div class="popup">
+            <div class="blank"></div>
+            <h2 id="pageTitle" class="text-center fw-bold title">
+                Welcome to HQ!
+            </h2>
+            <div class="main list">
+                <img class="moreImg" type="button" src="./images/help1.webp" width="300" height="77.36"
+                    onclick="window.location.href = 'setup.html'" alt="" srcset="./images/help1.webp 768w">
+                <img class="moreImg" type="button"
+                    onclick="window.open('https://soomshower.com/collections/vitamin-essence-collection');"
+                    src="./images/help2.webp" width="300" height="77" alt="" srcset="./images/help2.webp 768w">
+                <img class="moreImg" type="button" onclick="window.open('https://soomshower.com/pages/faq');"
+                    src="./images/help3.webp" width="300" height="77.36" alt="" srcset="./images/help3.webp 768w">
+                <img class="moreImg" type="button" src="./images/help4.webp" width="300" height="77"
+                    onclick="window.open('https://soomshower.com/pages/our-story');" alt=""
+                    srcset="./images/help4.webp 768w">
+                <div class="blank"></div>
+                <div class="blank"></div>
+            </div>
+            <div class="install list d-none">
+                <p class="tip">
+                    What type of showerhead do you have?
+                </p>
+
+                <button id="work" class="btn btn-black" onclick="toWall()" type="button">
+                    Wallmounted Showerhead
+                </button>
+                <button id="download" class="btn btn-black" onclick="toHandheld()" type="button">
+                    Handheld Showerhead
+                </button>
+                <div class="blank"></div>
+                <div class="blank"></div>
+                <button class="btn btn-black-outline" onclick="installToMain()" type="button">
+                    Back
+                </button>
+                <div class="blank"></div>
+            </div>
+        </div>
+    </div>
+    <script defer src="./js/jq.min.js"></script>
+    <script defer src="./js/bootstrap.bundle.min.js"></script>
+    <script async src="./sw.js"></script>
+    <script async src="./js/index.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            if (window.location.href.endsWith('guide-adapter.html')) {
+                toVideoList();
+                document.getElementById('adapter').addClass('darker-button');
+                $('#adapter').addClass('darker-button');
+            }
+        });
+
+        function popin() {
+            $('.popup').toggleClass('hide');
+            $('.popup').addClass('up');
+            $('.bm-arrow').addClass('d-none');
+        }
+
+        function popout() {
+            $('.popup').removeClass('up');
+            $('.popup').addClass('hide');
+            $('.bm-arrow').removeClass('d-none');
+        }
+
+        function toHandheld() {
+            window.location.href = "hq-hand.html"
+        }
+    </script>
+</body>
+
+</html>

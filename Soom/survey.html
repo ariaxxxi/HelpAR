@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelpAR Soom">
+    <title>Survey</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/us.css">
+    <link rel="stylesheet" href="./css/survey.css">    
+    <link rel="manifest" href="./manifest.json">
+
+</head>
+<body>
+    
+    <script src="./sw.js"></script>
+    <script src="./js/index.js"></script>
+    
+    <div class="container-full">
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <img class="logo" style="width:80px;" src="./images/logo1.webp" alt="" srcset="">
+                        <p class="subtitle mt-0 mb-0 fw-lighter" style="font-size: 12px; color:grey">WE APPRECIATE YOUR FEEDBACK</p>
+                    
+                        <p class="subtitle mt-0 mb-0">How likely are you to recommend <br> Soom to a friend?</p>
+                        <div style="margin-top: 15vh;" class="d-flex justify-content-evenly mb-3">
+                            <img class="emoji" type="button" src="./images/rate/1.png" alt="" srcset="">
+                            <img class="emoji" type="button" src="./images/rate/2.png" alt="" srcset="">
+                            <img class="emoji" type="button" src="./images/rate/3.png" alt="" srcset="">
+                            <img class="emoji" type="button" src="./images/rate/4.png" alt="" srcset="">
+                            <img class="emoji" type="button" src="./images/rate/5.png" alt="" srcset="">
+                        </div>
+                        <img style="margin: 0 100px 0 100px; width:100%; height:auto; align-self: center;;" src="./images/rate/bar.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="./js/jq.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+          
+            function toMain(){
+                window.location.href = "./setup.html"
+            }
+
+        </script>
+        <script type="module">
+            import { generateUserId } from "./js/userid.js";
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+                import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+                import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+              
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                    apiKey: "AIzaSyBxVKrydLGc6xBSi2phFlLHCejQUKlJeuI",
+                    authDomain: "helpar-soom.firebaseapp.com",
+                    projectId: "helpar-soom",
+                    storageBucket: "helpar-soom.appspot.com",
+                    messagingSenderId: "2986081651",
+                    appId: "1:2986081651:web:158329fb90f0e8b8611906",
+                    measurementId: "G-0E13LXVFY4"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+    
+                const database = getDatabase(app);
+                const firestore = getFirestore(app);
+    
+            document.addEventListener("DOMContentLoaded", function() {
+                const ratingButtons = document.querySelectorAll('.emoji');
+    
+                ratingButtons.forEach(function(button, index) {
+                    button.addEventListener('click', function() {
+                        sendRateEvent(index + 1); 
+                    });
+                });
+            });
+    
+            const userId = generateUserId();
+    
+            function sendRateEvent(rate) {
+                
+                writeRatingData(userId, rate)
+                    .then(() => {
+                        window.location.href = "./setup.html";
+                    })
+                    .catch(error => {
+                        console.error("Error writing data to Firestore: ", error);
+                    });
+            }
+    
+            async function writeRatingData(userId, rate) {
+                try {
+                    const docRef = await addDoc(collection(firestore, 'ratings'), {
+                        userId: userId,
+                        rating: rate,
+                        timestamp: new Date(),
+                    });
+    
+                    console.log("Rating data written to Firestore with ID: ", docRef.id);
+                } catch (e) {
+                    console.error("Error adding document to Firestore: ", e);
+                }
+            }
+    
+        </script>
+    </div>
+</body>
+</html>
