@@ -31,7 +31,7 @@
                 <img class="moreImg" type="button"
                     onclick="window.open('https://soomshower.com/collections/vitamin-essence-collection');"
                     src="./images/help2.webp" width="300" height="77" alt="" srcset="./images/help2.webp 768w">
-                <img class="moreImg" type="button" onclick="window.open('https://soomshower.com/pages/faq');"
+                <img class="moreImg" type="button" onclick="toSupport()"
                     src="./images/help3.webp" width="300" height="77.36" alt="" srcset="./images/help3.webp 768w">
                 <img class="moreImg" type="button" src="./images/help4.webp" width="300" height="77"
                     onclick="window.open('https://soomshower.com/pages/our-story');" alt=""
@@ -39,6 +39,9 @@
                 <div class="blank"></div>
                 <div class="blank"></div>
             </div>
+
+
+
             <div class="install list d-none">
                 <p class="tip">
                     What type of showerhead do you have?
@@ -57,6 +60,38 @@
                 </button>
                 <div class="blank"></div>
             </div>
+
+            <div class="support list d-none">
+
+                <div class="input-container">
+                    <input class="form-line help" style="width:100%;" type="text" placeholder="How can we help?">
+
+                    <img class="speak" src="./images/speak.png" alt="Icon">
+                </div>
+
+                <div class="small-blank"></div>
+                <p class="tip"> FAQ </p>
+
+                <button id="showfaq1" class="btn btn-black-outline" type="button">
+                    Am I flossing correctly?
+                 </button>
+                <button class="btn btn-black-outline" type="button">
+                    What other products should I use?                    
+                </button>
+                <button class="btn btn-black-outline" type="button">
+                    What freebies can I get?                   
+                 </button>
+                
+
+                <button class="btn btn-black" onclick="supportToMore()" type="button">Back</button>
+
+                <div class="blank"></div>
+                <div class="blank"></div>
+
+
+            </div>
+
+
         </div>
     </div>
     <script defer src="./js/jq.min.js"></script>
@@ -88,6 +123,19 @@
         function toHandheld() {
             window.location.href = "hq-hand.html"
         }
+
+        function toSupport(){
+                $('.support').toggleClass('d-none');
+                $('.main').toggleClass('d-none');
+            }
+
+            
+            function supportToMore(){
+                $('.support').toggleClass('d-none');
+                $('.main').toggleClass('d-none');
+            }
+
+
     </script>
 </body>
 
