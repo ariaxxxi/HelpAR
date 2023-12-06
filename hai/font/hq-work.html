@@ -1,0 +1,174 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WT4HPZ9K');</script>
+        <!-- End Google Tag Manager -->
+        <title>HelpAR HQ</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/us.css">
+    </head>
+    <body>
+        <div class="container" style="max-width: 450px;">
+            <img class="logo" src="./images/logo1.png" alt="" srcset="">
+            <img class="bm-arrow d-none" onclick="popin()" src="./images/up.png" alt="">
+            <div class="popup">
+                <img class="arrow" onclick="popout()" src="./images/shou.png" alt="" srcset="">
+                <h2 id="pageTitle" class="text-center fw-bold title">Welcome to HQ!</h2>
+
+                <div class="main list">
+
+                    <button id="work" class="btn btn-orange check-btn"  onclick="toWork()" type="button">HOW IT WORKS</button>
+                    <button id="download" class="btn btn-orange" onclick="toDownload()" type="button">DOWNLOAD THE APP</button>
+                    <button class="btn btn-gray" onclick="toMore()" type="button">MORE</button>
+              
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+                </div>
+                
+    
+                <div class="download list d-none">
+                    <p class="tip"> Plug your device in & </p>
+                    <img class="dl apple"  src="./images/apple.png" alt="">
+                    <img class="dl google"  src="./images/google.png" alt="">
+                    <div class="blank"></div>
+
+                    <button class="btn btn-black" onclick="downloadToMore()" type="button">Next</button>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    
+                </div>
+
+                <div class="more list d-none">
+                    <img class="moreImg" type="button" src="./images/help1.png" onclick="toSupport()" alt="" srcset="">
+                    <img class="moreImg" type="button" src="./images/help2.png" alt="" srcset="">
+                    <img class="moreImg" type="button" src="./images/help3.png" alt="" srcset="">
+                    <div class="blank"></div>
+
+                    <button class="btn btn-black" onclick="moreToMain()" type="button">Back</button>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+
+                </div>
+
+                <div class="support list d-none">
+
+                    <div class="input-container">
+                        <input class="form-line help" type="text" placeholder="How can we help?">
+
+                        <img class="speak" src="./images/speak.png" alt="Icon">
+                    </div>
+
+                    <div class="small-blank"></div>
+                    <p class="tip"> FAQ </p>
+
+                    <button class="btn btn-black-outline" type="button">Connect to bluetooth</button>
+                    <button class="btn btn-black-outline" type="button">Update my bar</button>
+                    <button class="btn btn-black-outline" type="button">When to pour ingredients</button>
+                    <div class="blank"></div>
+
+                    <button class="btn btn-black" onclick="supportToMore()" type="button">Back</button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <script src="./js/jq.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script>
+            function popin(){
+                $('.popup').toggleClass('hide');
+                $('.popup').addClass('up');
+                $('.bm-arrow').addClass('d-none');
+            }
+
+            function popout(){
+                $('.popup').removeClass('up');
+                $('.popup').addClass('hide');
+                $('.bm-arrow').removeClass('d-none');
+
+            }
+
+            function toLogin(){
+                $('.main').toggleClass('d-none');
+                $('.login').toggleClass('d-none');
+                $('#pageTitle').text('Register Your Device');
+
+            }
+
+            function toMore(){
+                $('.more').toggleClass('d-none');
+                $('.main').toggleClass('d-none');
+                $('#pageTitle').text('Support HQ');
+            }
+
+            function toSupport(){
+                $('.support').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+                $('#pageTitle').text('Support HQ');
+            }
+
+            
+            function supportToMore(){
+                $('.support').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+                $('#pageTitle').text('Support HQ');
+            }
+            function toMain(){
+                $('.main').toggleClass('d-none');
+                $('.login').toggleClass('d-none');
+                addCheck('#res');
+                $('#pageTitle').text('Hi, There!');
+            }
+
+            function toWork(){
+                window.location.href = "work.html"
+            }
+
+            function addCheck(name){
+                $(name).addClass('check-btn')
+            }
+
+            function toDownload(){
+                $('.main').toggleClass('d-none');
+                $('.download').toggleClass('d-none');
+                $('#pageTitle').text('Download The App');
+            }
+
+            function downloadToMore(){
+                $('.more').toggleClass('d-none');
+                $('.download').toggleClass('d-none');
+                addCheck('#download');
+                $('#pageTitle').text('Welcome to HQ!');
+
+            }
+
+            function moreToMain(){
+                $('.main').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+                addCheck('#more');
+                $('#pageTitle').text('Welcome to HQ!');
+
+            }
+
+
+
+
+        </script>
+    </body>
+</html>

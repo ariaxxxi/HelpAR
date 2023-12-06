@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "HelpAR app",
+    "short_name": "HelpAR",
+    "description": "HelpAR app",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "../images/icon.png",
+            "sizes": "512x512"
+        }
+    ]
+}

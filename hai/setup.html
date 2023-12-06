@@ -1,0 +1,152 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <title>HelpAR HQ</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/us.css" />
+    </head>
+    <body>
+        <div class="container">
+            
+            <img class="logo" onClick="window.location.href = 'hq-more.html'" src="./images/logo1.png" alt="" srcset="" />
+            <!-- <img
+                class="bm-arrow d-none"
+                onclick="popin()"
+                src="./images/up.png"
+                alt=""
+            /> -->
+            <div class="popup">
+                <!-- <img
+                    class="arrow"
+                    onclick="popout()"
+                    src="./images/shou.png"
+                    alt=""
+                    srcset=""
+                /> -->
+                <div class="blank"></div>
+
+                <h2 id="pageTitle" class="text-center fw-bold title">
+                    Set Up
+                </h2>
+
+                <div class="video list">
+                   
+                    <div class="video list">
+                        <div class="button-container">
+                            <p class="tip" style="font-family: 'main';margin:0 20px 20px 20px;">Follow these steps to set up your Hai Shower</p>
+                            <div class="button-row">
+                                <button id="btn1" class="image-button">
+                                    <img
+                                        src="./images/btn1.png"
+                                        onclick="window.location.href ='./swiper1.html'"
+                                        alt="Image 1"
+                                    />
+                                </button>
+                                <button id="btn2" class="image-button">
+                                    <img
+                                        src="./images/btn2.png"
+                                        onclick="window.location.href ='./swiper2.html'"
+                                        alt="Image 2"
+                                    />
+                                </button>
+                                <button id="btn3" class="image-button">
+                                    <img
+                                        src="./images/btn3.png"
+                                        onclick="window.location.href ='./swiper3.html'"
+                                        alt="Image 3"
+                                    />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="small-blank"></div>
+
+                        <p class="tip" style="font-family: 'main';margin:20px 20px 20px 20px;">FAQs</p>
+
+
+                        <a href="#" class="btn-link" onclick="toFAQ1()">How does Hai help save energy?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ2()">How does the Bluetooth work?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ3()">What is WaterSense certification?</a>
+
+                        
+
+                    <div class="small-blank"></div>
+
+                    <button
+                        class="btn btn-black"
+                        onclick="toMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    
+                
+                </div>
+
+                
+            </div>
+        </div>
+        <script src="./js/jq.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script>
+
+            
+            let isFilter = JSON.parse(localStorage.getItem('isFilter'))  
+       
+            let allTrue = true;
+
+            for (let k in isFilter) {
+                if (!isFilter[k]) {
+                    allTrue = false;
+                    break; 
+                }
+            }
+            for(let k in isFilter) {
+                if(isFilter[k]) {
+                    let dom = document.getElementById(k)
+                    console.log(dom);
+                    dom.style.filter= 'brightness(70%)'
+                }
+            }
+
+            function toMain(){
+               
+                    window.location.href = "hq-more.html"
+                
+            }
+
+            document.getElementById("showfaq1").addEventListener("click", function() {
+                console.log("click");
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "none";
+            });
+
+            function goToScreen(screenNumber) {
+                localStorage.setItem('activeScreen', screenNumber);
+                window.location.href = './swiper.html';
+                if (screenNumber==1)
+                {
+                    localStorage.setItem('isFilter',JSON.stringify({
+                                ...isFilter,
+                                btn1:true
+                            }))
+                }
+            }
+        </script>
+    </body>
+</html>
