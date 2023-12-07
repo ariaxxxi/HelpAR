@@ -1,0 +1,19 @@
+{
+    "lang": "en-us",
+    "name": "HelpAR Lomi",
+    "short_name": "HelpAR",
+    "description": "HelpAR Lomi",
+    "start_url": "https://helpar.app/lomi/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "purpose": "any maskable",
+
+    "icons": [
+        {
+            "src": "./images/logo.png",
+            "sizes": "512x512"
+        }
+    ]
+}

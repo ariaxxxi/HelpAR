@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swpier</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/us.css">
+    <link rel="stylesheet" href="../css/swpier.css">
+    <link rel="stylesheet" href="../css/swiper.css">    
+</head>
+<body>
+    <div class="container-full">
+        <div class="blank"></div>
+        <div class="small-blank"></div>
+
+        <p class="tip" style="margin-bottom:0">GETTING STARTED </p>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+
+                        <p class="subtitle">    Lomi modes  </p>
+                            <div style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe id="step1" class="vimeoIframe" src="https://player.vimeo.com/video/887333556?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                            </div>
+                              <script src="https://player.vimeo.com/api/player.js"></script>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+
+                        <p class="subtitle">   Start lomi by pressing power button</p>
+
+                        <div style="padding:56.25% 0 0 0;position:relative;">
+                          
+                            <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/887333623?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                        </div>
+                        <button id="metalBack" class="btn-white" onclick="toHQ()" type="button">FINISH</button>
+
+                    </div>
+                </div>
+              
+               
+                
+            </div>
+            
+        </div>
+        
+        <div class="top-icon">
+            <img class="back" type="button" onClick="toHQ()" src="../images/backIcon.png" alt="" srcset="">
+            <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
+        </div>
+
+        <div id="popup">
+            <div id="popup-content" >
+                <span id="closePopup" class="close">x</span>
+                <p style="margin-top:20px; ">Sorry you're having issues. Feel free to contact us at +1(855)663-5227</p>
+            </div>
+        </div>
+
+        <script src="../js/jq.min.js"></script>
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+
+            window.addEventListener('load', function() {
+                var pageLoadTime = performance.now();
+                ga('send', 'event', 'Timing', 'Page Load', document.location.pathname, pageLoadTime);
+            });
+
+             let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+            
+            localStorage.setItem('isFilter',JSON.stringify({
+                ...isFilter,
+                btn3:true
+            }))
+            
+            var mySwiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on:{
+                    
+                    slideChangeTransitionEnd:function(){
+                        
+
+                        if(this.activeIndex == 0){
+                            const player1 = new Vimeo.Player('step1');
+                            const player2 = new Vimeo.Player('step2');
+                            player1.play();
+                            player2.pause();
+                            player2.setCurrentTime(0);
+
+                        }
+                        else if(this.activeIndex == 1 ){
+                            const player1 = new Vimeo.Player('step1');
+                            const player2 = new Vimeo.Player('step2');
+
+                            player2.play();
+                            player1.pause();
+                            player1.setCurrentTime(0);
+                            
+            
+                        }
+                     
+                        
+                       
+                    }
+                }
+            })
+            isSelected = false;
+            isPopup = false;
+
+          
+
+            function toHQ(){
+                window.location.href = "./setup.html"
+            }
+
+          
+            document.getElementById("showPopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            });
+            
+
+           
+           
+        </script>
+    </div>
+</body>
+</html>
