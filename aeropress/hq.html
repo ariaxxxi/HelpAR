@@ -4,16 +4,21 @@
 <html>
     <head>
      
-        <title>Lomi</title>
+        <title>AeroPress</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/index.css">
         <link rel="stylesheet" href="../css/us.css">
+        <link rel="manifest" href="../manifest.json">
+
     </head>
-    <body style="background-image: url('../images/lomi/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <body style="background-image: url('../images/aeropress/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <script src="../js/sw.js"></script>
+```````<script src="../js/index.js"></script>
         <div class="container" >
-            <img class="logo" onClick="window.location.href = 'hq.html'" src="../images/lomi/logo.png" alt="" srcset="" />
-            <img class="bm-arrow d-none" onclick="popin()" src="../images/up.png" alt="">
+            <img class="logo" style="width:120px;" onClick="window.location.href = 'hq.html'" src="../images/AeroPress/logo.png" alt="" srcset="" />
+            <img class="bm-arrow d-none" onclick="popin()" src="./images/up.png" alt="">
             <div class="popup">
                 <div class="blank"></div>
 
@@ -22,7 +27,7 @@
                 <div class="more list">
                     <img class="moreImg" type="button" src="../images/help1.png" onclick="window.location.href ='setup.html'" alt="" srcset="">
                     <img class="moreImg" type="button" onclick="toSupport()" src="../images/help2.png" alt="" srcset="">
-                    <img class="moreImg" type="button" onclick=" window.open('https://lomi.com/products/lomi');" src="../images/help3.png" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick=" window.open('https://www.aeropress.co.uk/products/aeropress-coffee-maker-clear');" src="../images/help3.png" alt="" srcset="">
                     <img class="moreImg" type="button" src="../images/help4.png" onclick="window.location.href ='ar.html'" alt="" srcset="">
 
                     <div class="blank"></div>
@@ -31,8 +36,8 @@
                 </div>
 
                 <div class="download list d-none">
-                    <img class="dl apple"  src="../images/apple.png" alt="">
-                    <img class="dl google"  src="../images/google.png" alt="">
+                    <img class="dl apple"  src="./images/apple.png" alt="">
+                    <img class="dl google"  src="./images/google.png" alt="">
                     <div class="blank"></div>
 
                     <button class="btn btn-black" onclick="downloadToMore()" type="button">Back</button>
@@ -54,13 +59,13 @@
                     <p class="tip"> FAQ </p>
 
                     <button id="showfaq1" class="btn btn-black-outline" type="button">
-                        How do I clean Lomi?
+                        How much coffee is made?
                     </button>
                     <button class="btn btn-black-outline" type="button">
-                        How does Lomi work?
+                        Is it microwave safe?
                     </button>
                     <button class="btn btn-black-outline" type="button">
-                        How long does Lomi run?
+                        How do I clean my AeroPress?
                     </button>
                     
 
@@ -75,8 +80,6 @@
         </div>
         <script src="../js/jq.min.js"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/control.js"></script>
-
         
 
         <script>
