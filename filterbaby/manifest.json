@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "FilterBaby",
+    "short_name": "FilterBaby",
+    "description": "HelpAR",
+    "start_url": "https://helpar.app/filterbaby/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./images/logo.png",
+            "sizes": "512x512"
+        }
+    ]
+}

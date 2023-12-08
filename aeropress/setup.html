@@ -3,32 +3,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-      
-        <title>Hai</title>
+       
+        <title>AeroPress</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/index.css" />
         <link rel="stylesheet" href="../css/us.css" />
-    </head>
-    <body style="background-image: url('../images/hai/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <link rel="manifest" href="../manifest.json">
 
+    </head>
+    <body style="background-image: url('../images/aeropress/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <script src="../js/sw.js"></script>
+<script src="../js/index.js"></script>
         <div class="container">
             
-            <img class="logo" onClick="window.location.href = 'hq-more.html'" src="../images/hai/logo.png" alt="" srcset="" />
-            <!-- <img
-                class="bm-arrow d-none"
-                onclick="popin()"
-                src="./images/up.png"
-                alt=""
-            /> -->
+            <img class="logo" style="width:120px;" onClick="window.location.href = 'hq.html'" src="../images/aeropress/logo.png" alt="" srcset="" />
+          
             <div class="popup">
-                <!-- <img
-                    class="arrow"
-                    onclick="popout()"
-                    src="./images/shou.png"
-                    alt=""
-                    srcset=""
-                /> -->
+               
                 <div class="blank"></div>
 
                 <h2 id="pageTitle" class="text-center fw-bold title">
@@ -39,7 +32,7 @@
                    
                     <div class="video list">
                         <div class="button-container">
-                            <p class="tip" style="font-family: 'main';margin:0 20px 20px 20px;">Follow these steps to set up your Hai Shower</p>
+                            <p class="tip" style="font-family: 'main';margin:0 20px 20px 20px;">Follow these steps to set up your AeroPress</p>
                             <div class="button-row">
                                 <button id="btn1" class="image-button">
                                     <img
@@ -47,7 +40,7 @@
                                         onclick="window.location.href ='./swiper1.html'"
                                         alt="Image 1"
                                     />
-                                    <span class="button-text">PREPARE SHOWERHEAD</span>
+                                    <span class="button-text">PREP</span>
 
                                 </button>
                                 <button id="btn2" class="image-button">
@@ -56,7 +49,7 @@
                                         onclick="window.location.href ='./swiper2.html'"
                                         alt="Image 2"
                                     />
-                                    <span class="button-text"> ATTACH</span>
+                                    <span class="button-text">MAKE COFFEE</span>
 
                                 </button>
                                 <button id="btn3" class="image-button">
@@ -65,7 +58,7 @@
                                         onclick="window.location.href ='./swiper3.html'"
                                         alt="Image 3"
                                     />
-                                    <span class="button-text">INSTALL</span>
+                                    <span class="button-text">CLEAN</span>
 
                                 </button>
                             </div>
@@ -76,9 +69,9 @@
                         <p class="tip" style="font-family: 'main';margin:20px 20px 20px 20px;">FAQs</p>
 
 
-                        <a href="#" class="btn-link" onclick="toFAQ1()">How does Hai help save energy?</a>
-                    <a href="#" class="btn-link" onclick="toFAQ2()">How does the Bluetooth work?</a>
-                    <a href="#" class="btn-link" onclick="toFAQ3()">What is WaterSense certification?</a>
+                        <a href="#" class="btn-link" onclick="toFAQ1()">How much coffee is made?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ2()">Is it microwave safe?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ3()">How do I clean my AeroPress?</a>
 
                         
 
@@ -128,7 +121,7 @@
 
             function toMain(){
                
-                    window.location.href = "hq-more.html"
+                    window.location.href = "hq.html"
                 
             }
 

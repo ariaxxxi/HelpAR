@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hai</title>
+    <title>AeroPress</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/us.css">
     <link rel="stylesheet" href="../css/swpier.css">
-    <link rel="stylesheet" href="../css/swiper.css">    
+    <link rel="stylesheet" href="../css/swiper.css">   
+    <link rel="manifest" href="./manifest.json">
+  
 </head>
 <body>
+    <script src="../js/sw.js"></script>
+<script src="../js/index.js"></script>
     <div class="container-full">
         <div class="blank"></div>
         <div class="small-blank"></div>
 
-        <p class="tip" style="margin-bottom:0">PREPARE SHOWERHEAD </p>
+        <p class="tip" style="margin-bottom:0">CLEAN </p>
 
         <div class="swiper-pagination"></div>
 
@@ -25,48 +29,45 @@
                     
                     <div class="slide">
 
-                        <p class="subtitle">Remove your old shower head with your hands or wrench</p>
+                        <p class="subtitle">    Remove Cap </p>
                             <div style="padding:56.25% 0 0 0;position:relative;">
-                                <iframe id="step1" class="vimeoIframe" src="https://player.vimeo.com/video/885722673?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                                <iframe id="step1" class="vimeoIframe" src="https://player.vimeo.com/video/887595229?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
                             </div>
                               <script src="https://player.vimeo.com/api/player.js"></script>
-                              
                     </div>
+                </div>
+                <div class="swiper-slide">
                     
-                </div>
-                <div class="swiper-slide">
                     <div class="slide">
 
-                        <p class="subtitle">  Remove any old thread tape</p>
-                  
-
-                        <div style="padding:56.25% 0 0 0;position:relative;">
-                          
-                            <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/885724638?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
-                        </div>
-
+                        <p class="subtitle">   Push Plunger To Eject Coffee Puck</p>
+                            <div style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/887595249?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                            </div>
+                              <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide">
-                        <p class="subtitle">  Clean the surface</p>
+
+                        <p class="subtitle">     Rinse Rubber Seal </p>
+                  
                         <div style="padding:56.25% 0 0 0;position:relative;">
                           
-                            <iframe id="step3" class="vimeoIframe" src="https://player.vimeo.com/video/885719128?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                            <iframe id="step3" class="vimeoIframe" src="https://player.vimeo.com/video/887595265?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
                         </div>
                         <button id="metalBack" class="btn-white" onclick="toHQ()" type="button">FINISH</button>
 
                     </div>
-
                 </div>
-               
+              
                 
             </div>
             
         </div>
         
         <div class="top-icon">
-            <img class="back" type="button" onClick="toHQ()" src="../images/backIcon.png" alt="" srcset="">
+            <img class="back" type="button" onClick="toSetup()" src="../images/backIcon.png" alt="" srcset="">
             <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
         </div>
 
@@ -93,7 +94,7 @@
             
             localStorage.setItem('isFilter',JSON.stringify({
                 ...isFilter,
-                btn1:true
+                btn3:true
             }))
             
             var mySwiper = new Swiper('.swiper', {
@@ -129,14 +130,15 @@
             
                         }
                         else if(this.activeIndex == 2){
-                            const player2 = new Vimeo.Player('step2');
-                            const player3 = new Vimeo.Player('step3');
+                            const player1 = new Vimeo.Player('step2');
+                            const player2 = new Vimeo.Player('step3');
 
-                            player3.play();
-                            player2.pause();
-                            player2.setCurrentTime(0);
+                            player2.play();
+                            player1.pause();
+                            player1.setCurrentTime(0);
                            
                         }
+                       
                        
                     }
                 }
@@ -147,9 +149,12 @@
           
 
             function toHQ(){
-                window.location.href = "./setup.html"
+                window.location.href = "./survey.html"
             }
 
+            function toSetup(){
+                window.location.href = "./setup.html"
+            }
           
             document.getElementById("showPopup").addEventListener("click", function() {
                 var popup = document.getElementById("popup");
@@ -162,8 +167,6 @@
             });
             
 
-           
-           
         </script>
     </div>
 </body>
