@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenFunk</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/us.css">
+    <link rel="stylesheet" href="./css/swpier.css">
+    <link rel="stylesheet" href="./css/swiper.css">    
+</head>
+<body>
+    <div class="container-full">
+        <div class="blank"></div>
+        <div class="small-blank"></div>
+
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">PREP </p>
+
+                        <p class="subtitle">  Add ingredients & liquid into your glass jar </p>
+                        <p class="tip">  Do not fill the jar above 80% of its volume to avoid pressure accumulating. </p>
+
+                            <div >
+                                <img class="big-phone" src="../images/openfunk/1.jpg" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+
+                        <p class="subtitle">  Place the head onto the glass jar and twist until tightly sealed.</p>
+                        <p class="tip"> Check for leakage before placing it on the motor base. </p>
+
+                        <div >
+                            <img class="big-phone" src="../images/openfunk/2.jpg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="subtitle">  Turn the jar upside down, twist and lock it onto the base. </p>
+                        <p class="tip"> Always grab the jar by the handles to avoid possible spilling </p>
+
+                        <div >
+                            <img class="big-phone" src="../images/openfunk/3.jpg" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+
+                        <p class="subtitle">  Turn on the mixer by rotating the knob. </p>
+                        <p class="tip"> Mixing should not require longer than one minute to yield smooth and creamy results. </p>
+
+                            <div >
+                                <img class="big-phone" src="../images/openfunk/4.jpg" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+
+                        <p class="subtitle"> Untwist the jar using the handles.</p>
+                        <p class="tip"> Do not remove the head until blending has completely ceased. </p>
+
+                        <div >
+                            <img class="big-phone" src="../images/openfunk/5.jpg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="subtitle">    Flip the jar towards its initial position and untwist the head.
+                            Enjoy! </p>
+                        <p class="tip"> Always point contents
+                            away from your body when unsealing </p>
+
+                        <div >
+                            <img class="big-phone" src="../images/openfunk/6.jpg" alt="" srcset="">
+                        </div>
+                        <button id="metalBack" class="btn-black" onclick="toSurvey()" type="button">FINISH</button>
+                    </div>
+                </div>
+               
+               
+                
+            </div>
+            
+        </div>
+        
+        <div class="top-icon">
+            <img class="back" type="button" onClick="toSetup()" src="../images/backIcon.png" alt="" srcset="">
+            <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
+        </div>
+
+        <div id="popup">
+            <div id="popup-content" >
+                <span id="closePopup" class="close">x</span>
+                <p style="margin-top:20px; ">Sorry you're having issues. Feel free to contact us at +1(855)663-5227</p>
+            </div>
+        </div>
+
+        <script src="../js/jq.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+
+           
+
+             let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+             var activeScreen = localStorage.getItem('activeScreen');
+
+            
+            var mySwiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                initialSlide: activeScreen ? activeScreen - 1 : 0,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on:{
+                    
+                    slideChangeTransitionEnd:function(){
+                        let buttonId = `btn${this.activeIndex + 1}`;
+                        let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+
+                        localStorage.setItem('isFilter', JSON.stringify({
+                            ...isFilter,
+                            [buttonId]: true
+                        }));
+                    }
+                }
+            })
+            isSelected = false;
+            isPopup = false;
+
+          
+
+            function toSetup(){
+                window.location.href = "./setup.html"
+            }
+
+            function toSurvey(){
+                window.location.href = "./survey.html"
+            }
+
+          
+            document.getElementById("showPopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            });
+            
+
+           
+           
+        </script>
+    </div>
+</body>
+</html>
