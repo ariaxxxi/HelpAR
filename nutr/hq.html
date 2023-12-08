@@ -1,0 +1,154 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+     
+        <title>HelpAR HQ</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/us.css">
+        <link rel="manifest" href="./manifest.json">
+    </head>
+    <body style="background-image: url('../images/nutr/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <div class="container" >
+            <img class="logo" style="width:120px;" onClick="window.location.href = 'hq.html'" src="../images/nutr/logo.png" alt="" srcset="" />
+            <img class="bm-arrow d-none" onclick="popin()" src="../images/up.png" alt="">
+            <div class="popup">
+                <div class="blank"></div>
+
+                <h2 id="pageTitle" class="text-center fw-bold title">Welcome to HQ</h2>
+                
+                <div class="more list">
+                    <img class="moreImg" type="button" src="../images/help1.png" onclick="window.location.href ='setup.html'" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick="toSupport()" src="../images/help2.png" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick=" window.open('https://thenutr.com/collections/best-sellers');" src="../images/help3.png" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick=" window.open('https://thenutr.com/blogs/recipes');"src="../images/help4.png" alt="" srcset="">
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+                </div>
+
+                <div class="download list d-none">
+                    <img class="dl apple"  src="./images/apple.png" alt="">
+                    <img class="dl google"  src="./images/google.png" alt="">
+                    <div class="blank"></div>
+
+                    <button class="btn btn-black" onclick="downloadToMore()" type="button">Back</button>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    
+                </div>
+
+
+                <div class="support list d-none">
+
+                    <div class="input-container">
+                        <input class="form-line help" style="width:100%;" type="text" placeholder="How can we help?">
+
+                        <img class="speak" src="../images/speak.png" alt="Icon">
+                    </div>
+
+                    <div class="small-blank"></div>
+                    <p class="tip"> FAQ </p>
+
+                  
+                    <button id="showfaq1" class="btn btn-black-outline" type="button">
+                        What nuts can I use?
+                     </button>
+                    <button class="btn btn-black-outline" type="button">
+                        What settings can I use?
+                                        </button>
+                    <button class="btn btn-black-outline" type="button">
+                        Is Nutr dishwasher safe?       
+                     </button>
+
+                    <button class="btn btn-black" onclick="supportToMore()" type="button">Back</button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+
+                </div>
+            </div>
+        </div>
+        <script src="../js/jq.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+
+        
+
+        <script>
+            function popin(){
+                $('.popup').toggleClass('hide');
+                $('.popup').addClass('up');
+                $('.bm-arrow').addClass('d-none');
+            }
+
+            function popout(){
+                $('.popup').removeClass('up');
+                $('.popup').addClass('hide');
+                $('.bm-arrow').removeClass('d-none');
+
+            }
+
+           
+
+            function toMore(){
+                $('.more').toggleClass('d-none');
+                $('.main').toggleClass('d-none');
+                $('#pageTitle').text('Support HQ');
+            }
+
+            function toDownload(){
+                $('.more').toggleClass('d-none');
+                $('.download').toggleClass('d-none');
+                $('#pageTitle').text('Download The App');
+            }
+
+            function downloadToMore(){
+                $('.download').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+            }
+
+            function toSupport(){
+                $('.support').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+            }
+
+            
+            function supportToMore(){
+                $('.support').toggleClass('d-none');
+                $('.more').toggleClass('d-none');
+            }
+            function toMain(){
+                $('.main').toggleClass('d-none');
+                $('.login').toggleClass('d-none');
+                addCheck('#res');
+            }
+
+          
+
+         
+
+            function moreToMain(){
+                window.location.href = "hq.html"
+
+            }
+
+
+            let isFilter = JSON.parse(localStorage.getItem('isFilter'))  
+            for(let k in isFilter) {
+                if(isFilter[k]) {
+                    let dom = document.getElementById(k)
+                    console.log(dom);
+                    dom.classList.add("check-btn");
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
