@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "Vitruvi",
+    "short_name": "Vitruvi",
+    "description": "HelpAR",
+    "start_url": "https://helpar.app/vitruvi/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./images/logo.png",
+            "sizes": "512x512"
+        }
+    ]
+}
