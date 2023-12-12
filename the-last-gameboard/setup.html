@@ -1,0 +1,180 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <title>The Last Gameboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/us.css">
+        <link rel="manifest" href="./manifest.json">
+
+</head>
+<body style="background-image: url('../images/thelastgameboard/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <script src="../js/sw.js"></script>
+    <script src="../js/index.js"></script>
+        <div class="container">
+            
+            <img class="logo" onClick="window.location.href = 'hq.html'" style="width:160px" src="../images/thelastgameboard/logo.png" alt="" srcset="" />
+          
+            <div class="popup">
+               
+                <div class="blank"></div>
+
+                <h2 id="pageTitle" class="text-center fw-bold title">
+                    Set Up
+                </h2>
+
+                <div class="video list">
+                   
+                    <div class="video list">
+                        <div class="button-container">
+                            <p class="tip" style="font-family: 'main';margin:0 20px 20px 20px;">Follow these steps to set up your Gameboard</p>
+                            <div class="button-row">
+                                <button id="btn1" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="window.location.href ='./swiper1.html'"
+                                        alt="Image 1"
+                                    />
+                                    <span class="button-text">Plug In Gameboard</span>
+
+                                </button>
+                                <button id="btn2" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="window.location.href ='./swiper2.html'"
+                                        alt="Image 2"
+                                    />
+                                    <span class="button-text">Connect to Internet</span>
+
+                                </button>
+                                <button id="btn3" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="window.location.href ='./swiper3.html'"
+                                        alt="Image 3"
+                                    />
+                                    <span class="button-text">Download a Game</span>
+
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <div class="button-row">
+                                <button id="btn4" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="window.location.href ='./swiper4.html'"
+                                        alt="Image 1"
+                                    />
+                                    <span class="button-text">Play Game</span>
+
+                                </button>
+                                <button id="btn2" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        alt="Image 2" style="opacity:0;"
+                                    />
+
+                                </button>
+                                <button id="btn3" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        alt="Image 3" style="opacity:0;"
+                                    />
+
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="small-blank"></div>
+
+                        <p class="tip" style="font-family: 'main';margin:20px 20px 20px 20px;">FAQs</p>
+
+
+                        <a href="#" class="btn-link" onclick="toFAQ1()">Do I need the companion app?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ2()">How do I add more players?</a>
+                    <a href="#" class="btn-link" onclick="toFAQ3()">How do I use the game pieces?</a>
+
+                        
+
+                    <div class="small-blank"></div>
+
+                    <button
+                        class="btn btn-black"
+                        onclick="toMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    
+                
+                </div>
+
+                
+            </div>
+        </div>
+        <script src="../js/jq.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script>
+
+            
+            let isFilter = JSON.parse(localStorage.getItem('isFilter'))  
+       
+            let allTrue = true;
+
+            for (let k in isFilter) {
+                if (!isFilter[k]) {
+                    allTrue = false;
+                    break; 
+                }
+            }
+            for(let k in isFilter) {
+                if(isFilter[k]) {
+                    let dom = document.getElementById(k)
+                    console.log(dom);
+                    dom.style.filter= 'brightness(70%)'
+                }
+            }
+
+            function toMain(){
+               
+                    window.location.href = "hq.html"
+                
+            }
+
+            document.getElementById("showfaq1").addEventListener("click", function() {
+                console.log("click");
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "none";
+            });
+
+            function goToScreen(screenNumber) {
+                localStorage.setItem('activeScreen', screenNumber);
+                window.location.href = './swiper.html';
+                if (screenNumber==1)
+                {
+                    localStorage.setItem('isFilter',JSON.stringify({
+                                ...isFilter,
+                                btn1:true
+                            }))
+                }
+            }
+        </script>
+    </body>
+</html>
