@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almond Cow</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/us.css">
+    <link rel="stylesheet" href="./css/swpier.css">
+    <link rel="stylesheet" href="./css/swiper.css">    
+</head>
+<body>
+    <div class="container-full">
+        <div class="blank"></div>
+        <div class="small-blank"></div>
+
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Fill </p>
+
+                        <p class="subtitle">  Fill the base with water to the MIN or MAX line (or in between).
+
+                        </p>
+
+                        <div class="img-container">
+
+                                <img class="big-phone" src="../images/almondcow/1.webp" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Add </p>
+
+                        <p class="subtitle">  Add dry ingredients to the filter basket up to the MAX / 1 cup line.
+
+                        </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" style="width:200px;" src="../images/almondcow/2.webp" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Twist </p>
+
+                        <p class="subtitle">  Secure the filter basket to the top of the Almond Cow by twisting the basket to the right.
+
+                        </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" style="width:400px;" src="../images/almondcow/3.webp" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Place </p>
+
+                        <p class="subtitle"> Place the top & power cord to the base. A solid blue light indicates it is ready to use.
+
+                        </p>
+
+                        <div class="img-container">
+
+                                <img class="big-phone" src="../images/almondcow/4.webp" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Press </p>
+
+                        <p class="subtitle"> Press the cow button! A white flashing light indicates that milking is in process. When the blue light is solid, your milk is ready.
+
+                        </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" src="../images/almondcow/5.webp" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">Enjoy </p>
+
+                        <p class="subtitle">   Remove the top of the Almond Cow and stand it in the collector cup. Pour your milk into a container and store in the fridge. Enjoy for 3-5 days.
+
+                        </p>
+
+                        <div class="img-container" style="height:40vh;">
+
+                            <img class="big-phone" src="../images/almondcow/6.webp" alt="" srcset="">
+                        </div>
+                        <button id="metalBack" class="btn-black" onclick="toSurvey()" type="button">FINISH</button>
+                    </div>
+                </div>
+               
+               
+                
+            </div>
+            
+        </div>
+        
+        <div class="top-icon">
+            <img class="back" type="button" onClick="toSetup()" src="../images/backIcon.png" alt="" srcset="">
+            <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
+        </div>
+
+        <div id="popup">
+            <div id="popup-content" >
+                <span id="closePopup" class="close">x</span>
+                <p style="margin-top:20px; ">Sorry you're having issues. Feel free to contact us at +1(855)663-5227</p>
+            </div>
+        </div>
+
+        <script src="../js/jq.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+
+           
+
+             let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+             var activeScreen = localStorage.getItem('activeScreen');
+
+            
+            var mySwiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                initialSlide: activeScreen ? activeScreen - 1 : 0,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on:{
+                    
+                    slideChangeTransitionEnd:function(){
+                        let buttonId = `btn${this.activeIndex + 1}`;
+                        let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+
+                        localStorage.setItem('isFilter', JSON.stringify({
+                            ...isFilter,
+                            [buttonId]: true
+                        }));
+                    }
+                }
+            })
+            isSelected = false;
+            isPopup = false;
+
+          
+
+            function toSetup(){
+                window.location.href = "./setup.html"
+            }
+
+            function toSurvey(){
+                window.location.href = "./survey.html"
+            }
+
+          
+            document.getElementById("showPopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            });
+            
+
+           
+           
+        </script>
+    </div>
+</body>
+</html>

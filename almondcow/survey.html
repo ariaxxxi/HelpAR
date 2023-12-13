@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almond Cow</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/us.css">
+    <link rel="stylesheet" href="../css/survey.css">    
+</head>
+<body>
+    <div class="container-full">
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <img class="logo"  style="width:240px;" src="../images/almondcow/logo.png" alt="" srcset="">
+                        <p class="subtitle mt-0 mb-0 fw-lighter" style="font-size: 12px; color:grey">WE APPRECIATE YOUR FEEDBACK</p>
+                    
+                        <p class="subtitle mt-0 mb-0" style="color:white;">How likely are you to recommend <br> Almond Cow to a friend?</p>
+                        <div style="margin-top: 15vh;" class="d-flex justify-content-evenly mb-3">
+                            <img class="emoji" onClick="toMain()" type="button" src="../images/rate/1.png" alt="" srcset="">
+                            <img class="emoji" onClick="toMain()" type="button" src="../images/rate/2.png" alt="" srcset="">
+                            <img class="emoji" onClick="toMain()" type="button" src="../images/rate/3.png" alt="" srcset="">
+                            <img class="emoji" onClick="toMain()" type="button" src="../images/rate/4.png" alt="" srcset="">
+                            <img class="emoji" onClick="toMain()" type="button" src="../images/rate/5.png" alt="" srcset="">
+                        </div>
+                        <img style="margin: 0 100px 0 100px; width:100%; height:auto; align-self: center;;" src="../images/rate/bar.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="../js/jq.min.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+          
+            function toMain(){
+                window.location.href = "./hq.html"
+            }
+
+        </script>
+    
+    </div>
+</body>
+</html>
