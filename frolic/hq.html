@@ -12,13 +12,13 @@
         <link rel="manifest" href="./manifest.json">
 
 </head>
-<body style="background-image: url('../images/quip/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<body style="background-image: url('../images/frolic/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <script src="../js/sw.js"></script>
     <script src="../js/index.js"></script>
 
         <div class="container" >
-            <img class="logo" onClick="window.location.href = 'hq.html'" src="../images/quip/logo.png" alt="" srcset="" />
+            <img class="logo" onClick="window.location.href = 'hq.html'" src="../images/frolic/logo.png" alt="" srcset="" />
             <img class="bm-arrow d-none" onclick="popin()" src="../images/up.png" alt="">
             <div class="popup">
                 <div class="blank"></div>
@@ -28,24 +28,15 @@
                 <div class="more list">
                     <img class="moreImg" type="button" src="../images/help1.png" onclick="window.location.href ='setup.html'" alt="" srcset="">
                     <img class="moreImg" type="button" onclick="toSupport()" src="../images/help2.png" alt="" srcset="">
-                    <img class="moreImg" type="button" onclick=" window.open('https://www.getquip.com/store');" src="../images/help3.png" alt="" srcset="">
-                    <img class="moreImg" type="button" src="../images/help4.png" onclick=" window.open('https://www.getquip.com/blog');" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick=" window.open('https://www.enjoyfrolic.com/collections/all?sort_by=title-ascending&filter.p.product_type=Toppings');" src="../images/help3.png" alt="" srcset="">
+                    <img class="moreImg" type="button" src="../images/help4.png" onclick=" window.open('https://www.enjoyfrolic.com/pages/demos');" alt="" srcset="">
 
                     <div class="blank"></div>
                     <div class="blank"></div>
 
                 </div>
 
-                <div class="download list d-none">
-                    <img class="dl apple"  src="./images/apple.png" alt="">
-                    <img class="dl google"  src="./images/google.png" alt="">
-                    <div class="blank"></div>
-
-                    <button class="btn btn-black" onclick="downloadToMore()" type="button">Back</button>
-                    <div class="blank"></div>
-                    <div class="blank"></div>
-                    
-                </div>
+              
 
 
                 <div class="support list d-none">
@@ -60,13 +51,13 @@
                     <p class="tip"> FAQ </p>
 
                     <button id="showfaq1" class="btn btn-black-outline" type="button">
-                        Am I flossing correctly?
+                         What temperature should I store it at?
                      </button>
                     <button class="btn btn-black-outline" type="button">
-                        What other products should I use?                    
+                       How high can I fill the ingredients?         
                     </button>
                     <button class="btn btn-black-outline" type="button">
-                        What freebies can I get?                   
+                        How do I clean the machine?                   
                      </button>
                     
 
@@ -144,14 +135,7 @@
 
 
             let isFilter = JSON.parse(localStorage.getItem('isFilter'))  
-            for(let k in isFilter) {
-                if(isFilter[k]) {
-                    let dom = document.getElementById(k)
-                    console.log(dom);
-                    dom.classList.add("check-btn");
-                }
-            }
-
+         
 
         </script>
     </body>

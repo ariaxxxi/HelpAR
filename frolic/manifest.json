@@ -1,16 +1,16 @@
 {
     "lang": "en-us",
-    "name": "Quip",
-    "short_name": "Quip",
+    "name": "Frolic",
+    "short_name": "Frolic",
     "description": "HelpAR",
-    "start_url": "https://helpar.app/quip/",
+    "start_url": "https://helpar.pages.dev/frolic",
     "background_color": "#2f3d58",
     "theme_color": "#2f3d58",
     "orientation": "any",
     "display": "standalone",
     "icons": [
         {
-            "src": "./images/logo.png",
+            "src": "../images/frolic/logo.png",
             "sizes": "512x512"
         }
     ]

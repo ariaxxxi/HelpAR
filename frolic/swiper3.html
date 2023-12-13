@@ -4,7 +4,7 @@
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quip</title>
+    <title>Frolic</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/us.css">
     <link rel="stylesheet" href="../css/swpier.css">
@@ -29,9 +29,9 @@
                     
                     <div class="slide">
 
-                        <p class="subtitle">     Wipe down outside of case  </p>
+                        <p class="subtitle">    Press button to start   </p>
                             <div style="padding:56.25% 0 0 0;position:relative;">
-                                <iframe id="step1" class="vimeoIframe" src="https://player.vimeo.com/video/889623299?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                                <iframe id="step1" class="vimeoIframe" src="https://player.vimeo.com/video/894203811?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
                             </div>
                               <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
@@ -40,25 +40,14 @@
 
                     <div class="slide">
 
-                        <p class="subtitle">  Wipe down inside of case</p>
+                        <p class="subtitle">    Wait 2 minutes & enjoy!</p>
                             <div style="padding:56.25% 0 0 0;position:relative;">
-                                <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/889623319?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                                <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/894203825?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
                             </div>
+                            <button id="metalBack" class="btn-white" onclick="toHQ()" type="button">FINISH</button>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="slide">
-                        <p class="subtitle">    Use lens cloth to clean mirror </p>
-                  
-                        <div style="padding:56.25% 0 0 0;position:relative;">
-                          
-                            <iframe id="step3" class="vimeoIframe" src="https://player.vimeo.com/video/889623332?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
-                        </div>
-                        <button id="metalBack" class="btn-white" onclick="toHQ()" type="button">FINISH</button>
-
-                    </div>
-                </div>
-              
+           
                 
             </div>
             
@@ -118,24 +107,14 @@
                         else if(this.activeIndex == 1 ){
                             const player1 = new Vimeo.Player('step1');
                             const player2 = new Vimeo.Player('step2');
-                            const player3 = new Vimeo.Player('step3');
 
                             player2.play();
                             player1.pause();
                             player1.setCurrentTime(0);
-                            player3.pause();
-                            player3.setCurrentTime(0);
+                         
             
                         }
-                        else if(this.activeIndex == 2){
-                            const player1 = new Vimeo.Player('step2');
-                            const player2 = new Vimeo.Player('step3');
-
-                            player2.play();
-                            player1.pause();
-                            player1.setCurrentTime(0);
-                           
-                        }
+                        
                        
                        
                     }
