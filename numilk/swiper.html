@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almond Cow</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/us.css">
+    <link rel="stylesheet" href="../css/swpier.css">
+    <link rel="stylesheet" href="../css/swiper.css">    
+</head>
+<body>
+    <div class="container-full">
+        <div class="blank"></div>
+        <div class="small-blank"></div>
+
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+
+                        <p class="subtitle">  Add water to fill line </p>
+
+                        <div style="padding:56.25% 0 0 0;position:relative;">
+                            <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/894367746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+
+                        <p class="subtitle">  Insert pouch into machine face down 
+
+                        </p>
+                        <div class="img-container">
+
+                            <div style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/894367757?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                            </div>
+                        </div>
+                        <div class="pop pop-inactive">
+                            <svg onclick="pop()" t="1697117681407" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10186" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+                                <path class="icon-color" d="M531.2 341.333333L170.666667 704c-8.533333 8.533333-21.333333 8.533333-29.866667 0-8.533333-8.533333-8.533333-21.333333 0-29.866667l362.666667-362.666666c8.533333-8.533333 21.333333-8.533333 29.866666 0 6.4 8.533333 6.4 21.333333-2.133333 29.866666z" p-id="10187" fill="#000000"></path>
+                                <path  class="icon-color" d="M864 704l-362.666667-362.666667c-8.533333-8.533333-8.533333-21.333333 0-29.866666 8.533333-8.533333 21.333333-8.533333 29.866667 0l362.666667 362.666666c8.533333 8.533333 8.533333 21.333333 0 29.866667-6.4 6.4-21.333333 6.4-29.866667 0z" p-id="10188" fill="#000000"></path></svg>
+                            <p class="subtitle mt-0 mb-1" style="font-size: 16px;color:black;">Explore Pouches</p>
+
+                            <img class="img-fluid" src="../images/numilk/product.webp" style="max-height: 350px; max-width: 100%; margin-bottom: 20px; margin-top: 20px;" alt="" srcset="">
+                            
+                            <img class="cart" src="../images/8_addToCart.png" onclick=" window.open('https://numilk.com/pages/pouches');" alt="" srcset="">
+                            <div class="blank"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+
+                        <p class="subtitle">  Press start </p>
+                        <div style="padding:56.25% 0 0 0;position:relative;">
+                            <iframe id="step2" class="vimeoIframe" src="https://player.vimeo.com/video/894367772?badge=0&amp;autopause=0&amp;quality_selector=1&amp;progress_bar=1&amp;player_id=0&amp;app_id=58479&autoplay=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:20vh;left:0;width:100%;height:100%;" title="step1"></iframe>
+                        </div>
+                        <button id="metalBack" class="btn-white" onclick="toSurvey()" type="button">FINISH</button>
+
+                    
+                    </div>
+                </div>
+               
+           
+               
+                
+            </div>
+            
+        </div>
+        
+        <div class="top-icon">
+            <img class="back" type="button" onClick="toSetup()" src="../images/backIcon.png" alt="" srcset="">
+            <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
+        </div>
+
+        <div id="popup">
+            <div id="popup-content" >
+                <span id="closePopup" class="close">x</span>
+                <p style="margin-top:20px; ">Sorry you're having issues. Feel free to contact us at +1(855)663-5227</p>
+            </div>
+        </div>
+
+        <script src="../js/jq.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+
+           
+
+             let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+             var activeScreen = localStorage.getItem('activeScreen');
+
+            
+            var mySwiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                initialSlide: activeScreen ? activeScreen - 1 : 0,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on:{
+                    
+                    slideChangeTransitionEnd:function(){
+                        let buttonId = `btn${this.activeIndex + 1}`;
+                        let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+
+                        localStorage.setItem('isFilter', JSON.stringify({
+                            ...isFilter,
+                            [buttonId]: true
+                        }));
+                    }
+                }
+            })
+            isSelected = false;
+            isPopup = false;
+
+          
+
+            function toSetup(){
+                window.location.href = "./setup.html"
+            }
+
+            function toSurvey(){
+                window.location.href = "./survey.html"
+            }
+
+          
+            document.getElementById("showPopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            });
+            
+            function pop(){
+                if(isPopup){
+                    $('.pop').toggleClass('pop-active');
+                    $('.pop').toggleClass('pop-inactive');
+                    $('.icon').css('transform','rotate(0)');
+                    $('.icon-color').css('fill','#000');
+                    isPopup = false;
+                }
+                else{
+                    $('.pop').toggleClass('pop-inactive');
+                    $('.pop').toggleClass('pop-active');
+                    $('.icon').css('transform','rotate(180deg)');
+                    $('.icon-color').css('fill','#000');
+
+                    isPopup = true;
+                }
+            }
+           
+           
+        </script>
+    </div>
+</body>
+</html>
