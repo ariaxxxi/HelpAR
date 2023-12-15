@@ -1,0 +1,196 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <title>flaus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/us.css">
+        <link rel="manifest" href="./manifest.json">
+
+</head>
+<body style="background-image: url('../images/flaus/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <script src="../js/sw.js"></script>
+    <script src="../js/index.js"></script>
+        <div class="container">
+            
+            <img class="logo"  style="width:240px;" onClick="window.location.href = 'hq.html'" src="../images/flaus/logo.png" alt="" srcset="" />
+            <!-- <img
+                class="bm-arrow d-none"
+                onclick="popin()"
+                src="./images/up.png"
+                alt=""
+            /> -->
+            <div class="popup">
+                <!-- <img
+                    class="arrow"
+                    onclick="popout()"
+                    src="./images/shou.png"
+                    alt=""
+                    srcset=""
+                /> -->
+                <div class="blank"></div>
+
+                <h2 id="pageTitle" class="text-center fw-bold title">
+                    Set Up
+                </h2>
+
+                <div class="video list">
+                   
+                    <div class="video list">
+                        <div class="button-container">
+                            <p class="tip" style="font-family: 'main';margin:0 20px 20px 20px;">Follow these steps to set up your Flaus</p>
+                            <div class="button-row">
+                                <button id="btn1" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(1)"
+                                        alt="Image 1"
+                                    />
+                                    <span class="button-text">KNOW YOUR FLAUS</span>
+
+                                </button>
+                                <button id="btn2" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(2)"
+                                        alt="Image 2"
+                                    />
+                                    <span class="button-text">GET ON VIBE</span>
+
+                                </button>
+                                <button id="btn3" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(3)"
+                                        alt="Image 3"
+                                    />
+                                    <span class="button-text">MIND YOUR GAPS</span>
+
+                                </button>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <div class="button-row">
+                                <button id="btn4" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(4)"
+                                        alt="Image 1"
+                                    />
+                                    <span class="button-text">REMOVE FLAUS HEAD</span>
+
+                                </button>
+                                <button id="btn5" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(5)"
+                                        alt="Image 2"
+                                    />
+                                    <span class="button-text">APPLY FRESH HEAD</span>
+
+                                </button>
+                                <button id="btn6" class="image-button">
+                                    <img
+                                        src="../images/bubble.png"
+                                        onclick="goToScreen(6)"
+                                        alt="Image 3"
+                                    />
+                                    <span class="button-text">CHARGE UP</span>
+
+                                </button>
+                            </div>
+                        </div>
+                        <div class="small-blank"></div>
+
+                        <p class="tip" style="font-family: 'main';margin:20px 20px 20px 20px;">FAQs</p>
+
+
+                        <a href="#" class="btn-link" onclick="toFAQ1()">Flausing vs flossing?</a>
+                        <a href="#" class="btn-link" onclick="toFAQ2()">How often should I change the head?</a>
+                        <a href="#" class="btn-link" onclick="toFAQ3()"> How do the sonic vibrations work?</a>
+    
+                        
+
+                    <div class="small-blank"></div>
+
+                    <button
+                        class="btn btn-black"
+                        onclick="toMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    
+                
+                </div>
+
+                
+            </div>
+        </div>
+        <script src="../js/jq.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script>
+
+            
+            let isFilter = JSON.parse(localStorage.getItem('isFilter')) || {};
+
+            function updateFilterAndStyle(buttonId) {
+                isFilter[buttonId] = true;
+                localStorage.setItem('isFilter', JSON.stringify(isFilter));
+
+                let dom = document.getElementById(buttonId);
+                dom.style.filter = 'brightness(70%)';
+            }
+            function goToScreen(screenNumber) {
+                localStorage.setItem('activeScreen', screenNumber);
+                window.location.href = './swiper.html';
+                updateFilterAndStyle(`btn${screenNumber}`);
+            }
+            document.querySelectorAll('.step-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Extract the step number from the button id
+                    let stepNumber = parseInt(this.id.replace('btn', ''));
+                    goToScreen(stepNumber);
+                });
+            });
+       
+            if (isFilter) {
+                // Loop through the filter data and update the button styles
+                for (let k in isFilter) {
+                    if (isFilter[k]) {
+                        updateFilterAndStyle(k);
+                    }
+                }
+            }
+       
+
+            function toMain(){
+               
+                    window.location.href = "hq.html"
+                
+            }
+
+            document.getElementById("showfaq1").addEventListener("click", function() {
+                console.log("click");
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popfaq1");
+                popup.style.display = "none";
+            });
+
+        </script>
+    </body>
+</html>

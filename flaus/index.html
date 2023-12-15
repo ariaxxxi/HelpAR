@@ -1,0 +1,125 @@
+<!-- FILEPATH: /H:/Web/Resgister/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+     
+
+        <title>Flaus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/us.css">
+        <link rel="manifest" href="./manifest.json">
+
+</head>
+<body style="background-image: url('../images/flaus/home.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <script src="../js/sw.js"></script>
+    <script src="../js/index.js"></script>
+    
+        <div class="container" >
+            <img class="logo" style="width:240px;" src="../images/flaus/logo.png" alt="" srcset="">
+            <img class="bm-arrow" onclick="popin()" src="../images/up.png" alt="">
+            <div class="popup hide">
+                <img class="arrow" onclick="popout()" src="../images/shou.png" alt="" srcset="">
+                <h2 id="pageTitle" class="text-center fw-bold title">Hi, There!</h2>
+
+        
+                <div class="login list">
+                    <p class="tip"> Tell us a bit about you to personalize your experience. </p>
+
+                    
+                    <div class="form-group">
+                        <div style="display: flex; justify-content: space-between;">
+                            <input class="form-line" style=" width: 100%; margin-left: 40px; margin-right: 10px;" type="text" id="firstName" placeholder="First Name">
+                            <input class="form-line" style=" width: 100%; margin-left: 10px; margin-right: 40px;" type="text" id="lastName" placeholder="Last Name">
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <input class="form-line" style=" width: 100%; margin-left: 40px; margin-right: 10px;" type="text" id="birthdate" placeholder="MM/DD/YYYY" inputmode="numeric">
+
+                            <select class="form-line" style=" width: 120px; margin-left: 10px; margin-right: 40px; color:rgb(22, 22, 22);align-items: center;" id="gender" placeholder="Gender">
+                                <option disabled selected>Gender</option>
+                                <option value="male">Woman</option>
+                                <option value="female">Man</option>
+                                <option value="other">Transgender</option>
+                                <option value="male">Non-binary/non-conforming</option>
+                                <option value="female">Prefer not to respond</option>
+                            </select>                        
+                        </div>
+                    </div>
+                        
+                    <input class="form-line"  type="text" id="email" placeholder="Email">
+                    <input class="form-line" type="text" id="phone" placeholder="Phone Number" inputmode="numeric">
+
+                        <div class="small-blank"></div>
+                        <button class="btn btn-black" onClick="toMain()" type="submit">Let's Get Started</button>
+
+                    
+
+                  
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+                </div>
+    
+            </div>
+        </div>
+        <script src="../js/jq.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            let startY, endY;
+
+            document.addEventListener('touchstart', function (event) {
+                startY = event.touches[0].clientY;
+            });
+
+            document.addEventListener('touchend', function (event) {
+                endY = event.changedTouches[0].clientY;
+
+                if (endY < startY) {
+                    popin(); // Call your popin function here
+                }
+            });
+        </script>
+
+  
+
+
+<script>
+
+
+
+    function popin(){
+        $('.popup').toggleClass('hide');
+        $('.popup').addClass('up');
+        $('.bm-arrow').addClass('d-none');
+    }
+
+    function popout(){
+        $('.popup').removeClass('up');
+        $('.popup').addClass('hide');
+        $('.bm-arrow').removeClass('d-none');
+
+    }
+
+
+    function toMain(){
+        window.location.href = "hq.html"
+    }
+
+    localStorage.setItem('isFilter',
+                        JSON.stringify({
+                            btn1: false,
+                            btn2: false,
+                            btn3: false,
+                            btn4: false,
+                            btn5: false,
+                            btn6: false
+                        }))
+    
+
+</script>
+    </body>
+</html>

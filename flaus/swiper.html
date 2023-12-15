@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almond Cow</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/us.css">
+    <link rel="stylesheet" href="./css/swpier.css">
+    <link rel="stylesheet" href="./css/swiper.css">    
+</head>
+<body>
+    <div class="container-full">
+        <div class="blank"></div>
+        <div class="small-blank"></div>
+
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">KNOW YOUR FLAUS  </p>
+                        <p class="subtitle"> First thing's first — some anatomy:<br>
+                        </p>
+                          
+
+                        <div class="img-container"style="height:80vh;">
+
+                                <img class="big-phone"  src="../images/flaus/4.webp" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+              
+                <div class="swiper-slide">
+                    
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">GET ON VIBE </p>
+                        <p class="subtitle"> The best way to get all that gunk out.
+
+                        </p>
+                        <p class="tip">  With your device turned on, choose your desired speed (10,000, 14,000 or 18,000 sonic vibrations per minute) position the floss between two teeth. Use your opposing teeth on the soft bite pad to gently control the pressure as you floss.
+
+                        </p>
+
+                        <div class="img-container">
+
+                                <img class="big-phone" src="../images/flaus/1.webp" alt="" srcset="">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">MIND YOUR GAPS </p>
+
+                        <p class="subtitle">  While flossing, gently pull the Flaus head to put tension in the floss and form a “C” shape around the tooth. We put a little extra “give” in your floss to make this easy.
+
+
+                        </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" src="../images/flaus/2.webp" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">REMOVE FLAUS HEAD </p>
+
+                        <p class="subtitle">  Removing your used Flaus Heads.
+                        </p>
+
+                        <p class="tip" style="margin-bottom:0"> Nest the curved neck of the flosser into the inner crease of your fingers, with your thumb placed flat across the bite pad. With both arms of the floss head against a flat surface, gently apply downwards pressure through the thumb, and rotate your thumb inwards. The floss head will pop off one side at a time. More removal options can be found further down this page. </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" style="width:400px;" src="../images/flaus/3.webp" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">APPLY FRESH HEAD </p>
+
+                        <p class="subtitle"> Refill your Flaus Head for freshest flossing.   </p>
+                        <p class="tip" style="margin-bottom:0">
+                            Grab a fresh Flaus Head from your refill stash. Align the skinny part of the Flaus Head with the open ridge on the back of the neck.<br>
+                            
+                            With your index finger and thumb, push the Flaus Head on to the
+                            mount. You will feel it click into place - — you’re ready to Flaus!
+                            
+                            
+                        </p>
+
+                        <div class="img-container">
+
+                            <img class="big-phone" src="../images/flaus/5.webp" alt="" srcset="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide">
+                        <p class="tip" style="margin-bottom:0">CHARGE UP </p>
+
+                        <p class="subtitle">  Charge your Flaus
+                        </p>
+
+                        <p class="tip" style="margin-bottom:0">Plug in the charging base to any USB-A outlet or power adapter and place your
+                            Flaus in the base to charge:<br>
+                            • Slow flashing = charging <br>
+                            • Solid light = fully charged (light will turn off after 2 minutes) </p>
+
+
+                        <div class="img-container" style="height:40vh;">
+
+                            <img class="big-phone" src="../images/flaus/6.webp" alt="" srcset="">
+                        </div>
+                        <button id="metalBack" class="btn-black" onclick="toSurvey()" type="button">FINISH</button>
+                    </div>
+                </div>
+               
+               
+                
+            </div>
+            
+        </div>
+        
+        <div class="top-icon">
+            <img class="back" type="button" onClick="toSetup()" src="../images/backIcon.png" alt="" srcset="">
+            <img id="showPopup" class="question" type="button" src="../images/question.png" alt="" srcset="">
+        </div>
+
+        <div id="popup">
+            <div id="popup-content" >
+                <span id="closePopup" class="close">x</span>
+                <p style="margin-top:20px; ">Sorry you're having issues. Feel free to contact us at +1(855)663-5227</p>
+            </div>
+        </div>
+
+        <script src="../js/jq.min.js"></script>
+        <!-- <script src="./js/buttonGray.js"></script> -->
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js.map"> </script>
+        <script>
+
+           
+
+             let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+             var activeScreen = localStorage.getItem('activeScreen');
+
+            
+            var mySwiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                initialSlide: activeScreen ? activeScreen - 1 : 0,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on:{
+                    
+                    slideChangeTransitionEnd:function(){
+                        let buttonId = `btn${this.activeIndex + 1}`;
+                        let isFilter = JSON.parse(localStorage.getItem('isFilter'))
+
+                        localStorage.setItem('isFilter', JSON.stringify({
+                            ...isFilter,
+                            [buttonId]: true
+                        }));
+                    }
+                }
+            })
+            isSelected = false;
+            isPopup = false;
+
+          
+
+            function toSetup(){
+                window.location.href = "./setup.html"
+            }
+
+            function toSurvey(){
+                window.location.href = "./survey.html"
+            }
+
+          
+            document.getElementById("showPopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            });
+
+            document.getElementById("closePopup").addEventListener("click", function() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            });
+            
+
+           
+           
+        </script>
+    </div>
+</body>
+</html>

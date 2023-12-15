@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "Cutzen Matcha",
+    "short_name": "Cutzen Matcha",
+    "description": "HelpAR",
+    "start_url": "https://helpar.app/cutzenmatcha/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./images/logo.png",
+            "sizes": "512x512"
+        }
+    ]
+}
